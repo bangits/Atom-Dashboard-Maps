@@ -16,4 +16,4 @@ spec:
         - name: "atom-7c25"
           image: "atomacrr.azurecr.io/atom"
           ports:
-            - containerPort: 90
+            - containerPort: 80

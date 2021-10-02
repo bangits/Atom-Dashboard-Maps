@@ -4,7 +4,7 @@ services:
     build:
       context: ./
     ports:
-      - 90:90
+      - 80:80
     ## Make sure you have the config.json file created in this directory
     ## If using conf.js make sure to create it and add it as a volume
     volumes:

@@ -79,7 +79,7 @@ spec:
                   - "10"
           name: import-map-deployer
           ports:
-            - containerPort: 90
+            - containerPort: 80
               protocol: TCP
           resources: {}
           terminationMessagePath: /dev/termination-log

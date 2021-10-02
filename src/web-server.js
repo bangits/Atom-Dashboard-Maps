@@ -295,7 +295,7 @@ app.delete("/services/:serviceName", function (req, res) {
 
 let server;
 if (process.env.NODE_ENV !== "test") {
-  server = app.listen(process.env.PORT || getConfig().port || 90, function () {
+  server = app.listen(process.env.PORT || getConfig().port || 80, function () {
     console.log("Listening at http://localhost:%s", server.address().port);
   });
 
