@@ -10,7 +10,7 @@ RUN apk --no-cache add tini
 ENTRYPOINT ["tini", "--"]
 USER node
 ARG container_port=80
-ENV PORT=$container_port
+ENV PORT=80
 ENV NODE_ENV=production
 EXPOSE $PORT
 WORKDIR /www
