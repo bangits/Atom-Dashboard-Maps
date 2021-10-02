@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "atom-7c25"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "atom-7c25"
+  template:
+    metadata:
+      labels:
+        app: "atom-7c25"
+    spec:
+      containers:
+        - name: "atom-7c25"
+          image: "atomacrr.azurecr.io/atom"
+          ports:
+          - containerPort: 5000
