@@ -1,0 +1,7 @@
+{
+  "manifestFormat": "importmap",
+  "locations": {
+    "dev": "importmap.json"
+  },
+  "port": 80
+}

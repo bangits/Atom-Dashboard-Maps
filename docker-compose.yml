@@ -9,3 +9,4 @@ services:
     ## If using conf.js make sure to create it and add it as a volume
     volumes:
       - ./config.json:/www/config.json
+      - ./importmap.json:/www/importmap.json
