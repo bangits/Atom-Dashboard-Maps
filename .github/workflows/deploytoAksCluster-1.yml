@@ -14,7 +14,7 @@ jobs:
       - name: Build and push image to ACR
         id: build-image
         run: |
-          docker-compose -f docker-compose.yml up -d
+          docker-compose -f docker-compose.yml build -d
           docker push atomacrr.azurecr.io/atom:${{ github.sha }}
 
       - uses: azure/k8s-set-context@v1
