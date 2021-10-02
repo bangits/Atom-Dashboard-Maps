@@ -3,48 +3,48 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    
-    - uses: azure/docker-login@v1
-      with:
-        login-server: atomacrr.azurecr.io
-        username: ${{ secrets.acr_atomacrr_username }}
-        password: ${{ secrets.acr_atomacrr_password }}
-    
-    - name: Build and push image to ACR
-      id: build-image
-      run: |
-        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t atomacrr.azurecr.io/atom:${{ github.sha }} --label dockerfile-path=Dockerfile
-        docker push atomacrr.azurecr.io/atom:${{ github.sha }}
-    
-    - uses: azure/k8s-set-context@v1
-      with:
-         kubeconfig: ${{ secrets.aks_atom_kubeConfig }}
-      id: login
-    
-    - name: Create namespace
-      run: |
-        namespacePresent=`kubectl get namespace | grep atoma501 | wc -l`
-        if [ $namespacePresent -eq 0 ]
-        then
-            echo `kubectl create namespace atoma501`
-        fi
+      - uses: actions/checkout@master
 
-    - uses: azure/k8s-create-secret@v1
-      with:
-        namespace: atoma501
-        container-registry-url: atomacrr.azurecr.io
-        container-registry-username: ${{ secrets.acr_atomacrr_username }}
-        container-registry-password: ${{ secrets.acr_atomacrr_password }}
-        secret-name: atomdockerauth
-       
-    - uses: azure/k8s-deploy@v1.2
-      with:
-        namespace: atoma501
-        manifests: |
-          manifests/deployment-1.yml
-          manifests/service-1.yml
-        images: |
-          atomacrr.azurecr.io/atom:${{ github.sha }}
-        imagepullsecrets: |
-          atomdockerauth
+      - uses: azure/docker-login@v1
+        with:
+          login-server: atomacrr.azurecr.io
+          username: ${{ secrets.acr_atomacrr_username }}
+          password: ${{ secrets.acr_atomacrr_password }}
+
+      - name: Build and push image to ACR
+        id: build-image
+        run: |
+          docker compose up
+          docker push atomacrr.azurecr.io/atom:${{ github.sha }}
+
+      - uses: azure/k8s-set-context@v1
+        with:
+          kubeconfig: ${{ secrets.aks_atom_kubeConfig }}
+        id: login
+
+      - name: Create namespace
+        run: |
+          namespacePresent=`kubectl get namespace | grep atoma501 | wc -l`
+          if [ $namespacePresent -eq 0 ]
+          then
+              echo `kubectl create namespace atoma501`
+          fi
+
+      - uses: azure/k8s-create-secret@v1
+        with:
+          namespace: atoma501
+          container-registry-url: atomacrr.azurecr.io
+          container-registry-username: ${{ secrets.acr_atomacrr_username }}
+          container-registry-password: ${{ secrets.acr_atomacrr_password }}
+          secret-name: atomdockerauth
+
+      - uses: azure/k8s-deploy@v1.2
+        with:
+          namespace: atoma501
+          manifests: |
+            manifests/deployment-1.yml
+            manifests/service-1.yml
+          images: |
+            atomacrr.azurecr.io/atom:${{ github.sha }}
+          imagepullsecrets: |
+            atomdockerauth
