@@ -3,6 +3,8 @@ WORKDIR /www
 COPY package.json yarn.lock ./
 RUN yarn install  --production --frozen-lockfile
 COPY . /www/
+COPY config.json /www/
+COPY importmap.json /www/
 
 
 FROM node:14-alpine as release
