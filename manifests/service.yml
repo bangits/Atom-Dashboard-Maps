@@ -1,15 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: "atom-7c25"
-    labels:
-        app: "atom-7c25"
+  name: "atom-7c25"
+  labels:
+    app: "atom-7c25"
 spec:
-    type: LoadBalancer
-    ports:
-    - port: 5000
-      targetPort: 5000
+  type: LoadBalancer
+  ports:
+    - port: 90
+      targetPort: 90
       protocol: TCP
       name: http
-    selector:
-        app: "atom-7c25"
+  selector:
+    app: "atom-7c25"

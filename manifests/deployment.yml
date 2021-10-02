@@ -1,4 +1,4 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: "atom-7c25"
@@ -16,4 +16,4 @@ spec:
         - name: "atom-7c25"
           image: "atomacrr.azurecr.io/atom"
           ports:
-          - containerPort: 5000
+            - containerPort: 90
