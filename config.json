@@ -1,7 +1,7 @@
 {
   "manifestFormat": "importmap",
   "locations": {
-    "dev": "importmap.json"
+    "dev": "http://52.190.31.22/import-map.json?env=dev"
   },
   "port": 80
 }
