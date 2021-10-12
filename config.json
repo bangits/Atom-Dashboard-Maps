@@ -3,5 +3,5 @@
   "locations": {
     "dev": "importmap.json"
   },
-  "port": 80
+  "port": 8000
 }

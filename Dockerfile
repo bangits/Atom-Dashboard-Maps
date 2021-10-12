@@ -10,7 +10,7 @@ FROM node:14-alpine as release
 RUN apk --no-cache add tini
 ENTRYPOINT ["tini", "--"]
 USER root
-ARG container_port=80
+ARG container_port=8000
 ENV PORT=$container_port
 ENV NODE_ENV=production
 EXPOSE $PORT
