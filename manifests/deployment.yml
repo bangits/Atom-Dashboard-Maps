@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "atomaks-8e23"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "atomaks-8e23"
+  template:
+    metadata:
+      labels:
+        app: "atomaks-8e23"
+    spec:
+      containers:
+        - name: "atomaks-8e23"
+          image: "atomfrontcr.azurecr.io/atomaks"
+          ports:
+          - containerPort: 8000
