@@ -6,7 +6,6 @@ COPY . /www/
 COPY config.json /www/
 COPY importmap.json /www/
 
-
 FROM node:14-alpine as release
 RUN apk --no-cache add tini
 ENTRYPOINT ["tini", "--"]
