@@ -3,5 +3,6 @@
   "locations": {
     "default": "importmap.json"
   },
-  "port": 8000
+  "port": 8000,
+  "cacheControl": "no-cache"
 }
