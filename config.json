@@ -1,7 +1,7 @@
 {
   "manifestFormat": "importmap",
   "locations": {
-    "dev": "importmap.json"
+    "default": "importmap.json"
   },
   "port": 8000
 }
