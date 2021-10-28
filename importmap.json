@@ -1,10 +1,13 @@
 {
   "imports": {
-    "@atom/design-system": "http://20.88.177.162:6005/atom-design-system.js?v=93b8beb8f308c0d77ad9829726e89337cf2eb72f",
-    "@atom/design-system/": "http://20.88.177.162:6005/",
+    "@atom/design-system": "http://52.191.232.138:6005/atom-design-system.js",
+    "@atom/design-system/": "http://52.191.232.138:6005/",
     "@atom-dashboard/root-config": "http://52.154.70.180:9000/atom-dashboard-root-config.js?v=3811cee8ccb5bad2d5bfe34c22adc7e615ffa075",
     "@atom-dashboard/root-config/": "http://52.154.70.180:9000/",
     "@atom/authorization": "http://40.76.149.218:9001/atom-authorization.js?v=12312213",
-    "@atom/authorization/": "http://40.76.149.218:9001/"
+    "@atom/authorization/": "http://40.76.149.218:9001/",
+
+    "@atom/navigation": "http://20.62.234.254:9003/atom-navigation.js",
+    "@atom/navigation/": "http://20.62.234.254:9003/"
   }
 }
