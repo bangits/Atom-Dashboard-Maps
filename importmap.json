@@ -8,6 +8,14 @@
     "@atom/authorization/": "http://40.76.149.218:9001/",
 
     "@atom/navigation": "http://20.62.234.254:9003/atom-navigation.js",
-    "@atom/navigation/": "http://20.62.234.254:9003/"
+    "@atom/navigation/": "http://20.62.234.254:9003/",
+
+    "@atom/common": "http://52.151.242.22:6001/atom-common.js",
+    "@atom/common/": "http://52.151.242.22:6001/",
+
+    "@atom/game-management": "http://20.85.157.7:9002/atom-game-management.js",
+    "@atom/game-management/": "http://20.85.157.7:9002/"
   }
 }
+
+// curl -X PATCH http://52.149.205.195:8000/import-map.json --data "@importmap.json" -H "Accept: application/json" -H "Content-Type: application/json"
