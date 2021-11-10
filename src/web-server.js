@@ -1,6 +1,7 @@
 //Setup
 "use strict";
 require("dotenv").config();
+// curl -X PATCH http://52.149.205.195:8000/import-map.json --data "@importmap.json" -H "Accept: application/json" -H "Content-Type: application/json"
 
 const express = require("express"),
   bodyParser = require("body-parser"),

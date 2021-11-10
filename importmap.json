@@ -17,5 +17,3 @@
     "@atom/game-management/": "http://20.85.157.7:9002/"
   }
 }
-
-// curl -X PATCH http://52.149.205.195:8000/import-map.json --data "@importmap.json" -H "Accept: application/json" -H "Content-Type: application/json"
